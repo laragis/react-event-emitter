@@ -1,12 +1,12 @@
 {
-  "name": "@ttungbmt/package-skeleton-js",
+  "name": "@ttungbmt/react-event-emitter",
   "version": "1.0.0",
   "description": "A skeleton repository",
   "keywords": [],
-  "homepage": "https://github.com/laragis/package-skeleton-js#readme",
+  "homepage": "https://github.com/laragis/react-event-emitter#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laragis/package-skeleton-jst.git"
+    "url": "git+https://github.com/laragis/react-event-emitter.git"
   },
   "license": "MIT",
   "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
@@ -24,14 +24,19 @@
     "src"
   ],
   "scripts": {
-    "build": "pnpm clean && pnpm microbundle --jsx React.createElement",
+    "build": "pnpm clean && pnpm microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --name ReactEventEmitter",
     "clean": "rimraf dist",
     "format": "prettier --write \"(src|examples)/**/*.{js,ts,tsx}\" \"**/*.md\"",
     "format:check": "prettier --list-different \"(src|examples)/**/*.{js,ts,tsx}\" \"docs/*/**.md\"",
     "size": "size-limit",
-    "watch": "microbundle watch --jsx React.createElement --no-compress"
+    "watch": "microbundle watch --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --name ReactEventEmitter --no-compress"
   },
-  "dependencies": {},
+  "dependencies": {
+    "eventemitter3": "^4.0.7",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.1.20",
+    "react-use": "^17.4.0"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.0.1",
     "microbundle": "^0.15.1",

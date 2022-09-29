@@ -1,1 +1,4 @@
-# package-skeleton-js
+# React Event Emitter
+
+# Libs
+- mitt
