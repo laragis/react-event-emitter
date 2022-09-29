@@ -1,0 +1,60 @@
+{
+  "name": "@ttungbmt/package-skeleton-js",
+  "version": "1.0.0",
+  "description": "A skeleton repository",
+  "keywords": [],
+  "homepage": "https://github.com/laragis/package-skeleton-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laragis/package-skeleton-jst.git"
+  },
+  "license": "MIT",
+  "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
+  "sideEffects": false,
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.mjs"
+  },
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "source": "src/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "pnpm clean && pnpm microbundle --jsx React.createElement",
+    "clean": "rimraf dist",
+    "format": "prettier --write \"(src|examples)/**/*.{js,ts,tsx}\" \"**/*.md\"",
+    "format:check": "prettier --list-different \"(src|examples)/**/*.{js,ts,tsx}\" \"docs/*/**.md\"",
+    "size": "size-limit",
+    "watch": "microbundle watch --jsx React.createElement --no-compress"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.0.1",
+    "microbundle": "^0.15.1",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.2",
+    "size-limit": "^8.0.1",
+    "vite": "^3.0.9"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "size-limit": [
+    {
+      "limit": "200 kB",
+      "path": "dist/index.js"
+    },
+    {
+      "limit": "200 kB",
+      "path": "dist/index.mjs"
+    }
+  ]
+}
